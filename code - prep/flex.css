@@ -1,0 +1,104 @@
+.container {
+    display: flex;
+    background-color: pink;
+    padding: 5px;
+}
+
+.container div {
+    border: 1px solid grey;
+}
+
+.row {
+    flex-direction: row;
+}
+
+.row-reverse {
+    flex-direction: row-reverse;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.column-reverse {
+    flex-direction: column-reverse;
+}
+
+.small {
+    width: 50px;
+    height: 50px;
+}
+
+.big {
+    width: 100px;
+    height: 100px;
+}
+
+.tall {
+    width: 50px;
+    height: 100px;
+}
+
+.xl{
+    width:500px;
+}
+
+.flex-1 {
+    flex-grow: 1;
+}
+
+.flex-2 {
+    flex-grow: 2;
+}
+
+.flex-start {
+    justify-content: flex-start;
+}
+
+.flex-end {
+    justify-content: flex-end;
+}
+
+.flex-center {
+    justify-content: flex-center;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+.space-around {
+    justify-content: space-around;
+}
+
+.space-evenly {
+    justify-content: space-evenly;
+}
+
+.align-items-flex-start {
+    align-items: flex-start;
+}
+
+.align-items-flex-end {
+    align-items: flex-end;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.align-items-baseline {
+    align-items: baseline;
+}
+
+.flex-wrap-nowrap {
+    flex-wrap: nowrap;
+}
+
+.flex-wrap-wrap {
+    flex-wrap: wrap;
+}
+
+.flex-wrap-wrap-reverse {
+    flex-wrap: wrap-reverse;
+}

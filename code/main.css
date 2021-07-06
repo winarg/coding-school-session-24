@@ -1,0 +1,102 @@
+.myHeader1, .myHeader2{
+  color: rgb(255, 100, 60);
+}
+
+.myHeader2{
+  font-weight: 200;
+  border: 1px solid green;
+}
+
+#divContainer{
+  border: 3px solid pink;
+}
+
+body{
+    padding: 5px;
+}
+
+footer{
+    padding: 5px 10px;
+    background-color: grey;
+}
+
+div{
+    border: 1px solid black;
+}
+
+h5{
+    color: red;
+}
+
+td{
+    background-color: green;
+}
+
+table tr > td:first-child{
+    background-color: red;
+}
+
+th{
+    color: green;
+}
+
+img{
+  width:25%;
+	transition: 1s width;
+}
+
+img:hover{
+  border: 1px solid #aaaa2c;
+  width: 50%;
+  cursor: pointer;
+  padding: 20px;
+}
+
+ul{
+    /* direction: rtl; */
+  list-style-type: lower-roman;
+}
+
+/* li{
+    float: left;
+} */
+
+  ol {
+    counter-reset: item;
+    list-style-type: none;
+  }
+  ol>li { 
+    counter-increment: item;
+  }
+  ol>li::before { 
+    content: counters(item, '.') ' - '; 
+  }
+
+  tr:nth-child(odd) {
+    background: red;
+  }
+  
+  tr:nth-child(even) {
+    background: blue;
+  }
+
+  @font-face {
+    font-family: myFirstFont;
+    src: url(sansation_light.woff);
+  }
+  
+  div.custom-font {
+    font-family: myFirstFont;
+  }
+  
+  .master-div{
+	  background-color: green;
+  }
+  
+    .master-div > p {
+		background-color: pink;
+	}
+  
+  #secondDiv{
+	  background-color: blue;
+  }

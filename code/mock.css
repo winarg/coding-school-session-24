@@ -1,0 +1,80 @@
+nav{
+    display:flex;
+    height: 50px;
+}
+
+.logo{
+    width: 200px;
+    background-color: pink;
+    text-align: center;
+    font-family: 'Segoe UI';
+    font-size: 20px;
+    color: #ababab;
+}
+
+.logo span, .current-user-container span{
+    line-height: 50px;
+}
+
+.current-user-container{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    background-image: linear-gradient(to right, pink , grey);
+}
+
+.current-user{
+    border: 1px solid blue;
+    border-radius: 5px;
+}
+
+.main-container{
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+
+.vertical-menu{
+    width: 200px;
+    background-color: pink;
+}
+
+div.content{
+    width: 100%;
+    background-color: gray;
+}
+
+html, body{
+    height: 100%;
+    margin: 0;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+}
+
+ul{
+    list-style: none;
+    margin: 0;
+    padding: 5px;
+}
+
+ul li{
+    color: grey;
+    padding: 10px;
+}
+
+ul li:hover{
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+/* .content{ */
+    /* overflow: auto; */
+/* } */
+
+/* .large-item{ */
+    /* height: 2000px; */
+/* } */

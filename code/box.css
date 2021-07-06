@@ -1,0 +1,46 @@
+nav{
+    display:flex;
+    height: 20px;
+}
+
+.logo{
+    width: 200px;
+}
+
+.current-user{
+    width: 100%;
+    text-align: right;
+}
+
+.current-user2{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.main-container{
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+
+.vertical-menu{
+    width: 200px;
+    background-color: pink;
+}
+
+div.content{
+    width: 100%;
+    background-color: gray;
+}
+
+html, body{
+    height: calc(100% - 10px);
+    margin: 0;
+}
+
+/* add in order to remove scroll */
+/* body{
+    display: flex;
+    flex-direction: column;
+} */

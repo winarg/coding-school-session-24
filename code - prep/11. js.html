@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+</html>
+    <head>
+
+    </head>
+    <body>
+        <div class="main-container">
+        
+            <table>
+                <tr>
+                    <td><label for="txtNetPrice">Net Price</label></td>
+                    <td><input id="txtNetPrice"></td>
+                </tr>
+                <tr>
+                    <td><label for="txtDiscount">Discount</label></td>
+                    <td><input id="txtDiscount"></td>
+                </tr>
+                <tr>
+                    <td><label for="txtItems">Items</label></td>
+                    <td><input id="txtItems"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <button id="btnCalculate" onclick="calculate()">Calculate</button>
+                    </td>
+                    <td>
+                        <span id="spTotal"></span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <script type="text/javascript">
+            function calculate(){
+                var price = document.getElementById("txtNetPrice").value;
+                var discount = document.getElementById("txtDiscount").value;
+                var items = document.getElementById("txtItems").value;
+
+                document.getElementById("spTotal").textContent = (price * (1 - discount))*items;
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+</html>
+
+<head>
+
+    <style type="text/css">
+    .selected{
+        font-weight: bold;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="main-container" style="display: flex; flex: 1 1 auto">
+
+        <div style="width: 20%; min-width: 200px;">
+            <button onclick="addNew()">Add New</button>
+            <ul id="lstList"></ul>
+        </div>
+
+        <div>
+            <form id="frmMain">
+                <input id="txtSelectedId" type="hidden">
+                <table>
+                    <tr>
+                        <td><label for="txtName">Name</label></td>
+                        <td><input id="txtName"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="txtDescription">Description</label></td>
+                        <td><input id="txtDescription"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <button id="btnAddToList" type="button" onclick="addToList()">Add To List</button>
+                            <button id="btnRemoveFromList" type="button" onclick="removeFromList()">Remove</button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+
+    </div>
+
+    <script type="text/javascript">
+        var itemsList = [];
+        var incId = 0;
+
+        function addNew() {
+            document.getElementById('frmMain').reset();
+            document.getElementById('txtSelectedId').value = null;
+        }
+
+        function addToList() {
+            var name = document.getElementById("txtName").value;
+            var description = document.getElementById("txtDescription").value;
+
+            var selectedId = +document.getElementById("txtSelectedId").value;
+            if (selectedId) {
+                for(var i=0; i<itemsList.length; i++){
+                    var curItem = itemsList[i];
+                    if(curItem.id !== selectedId )
+                        continue;
+
+                    curItem.name = name;
+                    curItem.description = description;
+                    break;
+                }
+            } else {
+                incId += 1;
+                itemsList.push({ id: incId, name, description });
+            }
+            redrawList();
+        }
+
+        function redrawList() {
+
+            var lstList = document.getElementById("lstList");
+
+            lstList.innerHTML = "";
+            for (var i = 0; i < itemsList.length; i++) {
+
+                var curListItem = itemsList[i];
+                var tmpLi = document.createElement("li");
+                tmpLi.appendChild(document.createTextNode(curListItem.name));
+                tmpLi.setAttribute('data-id', curListItem.id);
+                tmpLi.addEventListener('click', (event) => {
+                    loadSelectedItem(event);
+                });
+
+                lstList.appendChild(tmpLi);
+            }
+        }
+
+        function loadSelectedItem(e) {
+            var selectedId = +e.target.dataset.id;
+
+            var selectedItem = findItemById(selectedId);
+
+            removePreviousSelection();
+            e.target.classList.add('selected');
+
+            document.getElementById("txtName").value = selectedItem.name;
+            document.getElementById("txtDescription").value = selectedItem.description;
+            document.getElementById("txtSelectedId").value = selectedItem.id;
+        }
+
+        function removePreviousSelection(){
+            var selection = document.getElementsByClassName("selected");
+            for(var element of selection)
+            {
+                element.classList.remove('selected');
+            }
+        }
+
+        function removeFromList(){
+            var selectedId = +document.getElementById("txtSelectedId").value;
+            var foundIndex = itemsList.findIndex( c=> c.id === selectedId);
+            
+            if(foundIndex === -1)
+                return;
+            
+            itemsList.splice(foundIndex, 1);
+            redrawList();
+        }
+
+        function findItemById(id) {
+            return itemsList.find(c => c.id === id);
+        }
+    </script>
+</body>
+
+</html>
