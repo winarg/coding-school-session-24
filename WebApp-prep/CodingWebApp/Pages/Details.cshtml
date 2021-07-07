@@ -1,0 +1,33 @@
+﻿@page "{id}"
+@model CodingWebApp.Pages.DetailsModel
+@{
+}
+
+
+<div>
+    <form id="frmMain" method="post">
+        <input id="txtSelectedId" type="hidden" value="@Model.SelectedListItem.Id">
+        <table>
+            <tr>
+                <td><label for="txtName">Name</label></td>
+                <td><input id="txtName" name="name" value="@Model.SelectedListItem.Name"></td>
+            </tr>
+            <tr>
+                <td><label for="txtDescription">Description</label></td>
+                <td><input id="txtDescription" name="description" value="@Model.SelectedListItem.Description"></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div style="display: flex">
+                        <button class="btn btn-warning" asp-page-handler="cancel">Cancel</button>
+                        @if (Model.SelectedListItem.Id > 0)
+                        {
+                        <button class="btn btn-danger" asp-page-handler="delete">Delete</button>
+                        }
+                        <button class="btn btn-success" type="submit">Save</button>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
